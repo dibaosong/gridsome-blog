@@ -26,6 +26,7 @@ import configuration from '@/store/modules/configuration'
 import getters from '@/store/getters'
 
 export default function (Vue, { router, head, isClient }) {
+
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   
@@ -45,6 +46,8 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.prototype.$store.dispatch("Init")
   Vue.prototype.$store.dispatch("GetInfo")
+
+  
   
 
   Vue.prototype.$markdown = function (value) {

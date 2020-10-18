@@ -2,13 +2,13 @@
     <div>
         <el-card shadow="never">
             <ul role="menubar" class="el-menu">
-                <li role="menuitem" tabindex="-1" class="el-menu-item is-active" style="padding-left: 20px;"><i
+                <li :class="{'is-active': $route.path == '/'}" role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
                         class="el-icon-star-off"></i> <g-link to="/">最新动态</g-link></li>
-                <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
+                <li :class="{'is-active': $route.path.includes('Social')}" role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
                         class="el-icon-mobile-phone"></i> <g-link to="/Social">社交圈</g-link></li>
-                <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
+                <li :class="{'is-active': $route.path.includes('Blog')}" role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
                         class="el-icon-edit-outline"></i> <g-link to="/Blog">博客列表</g-link></li>
-                <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
+                <li :class="{'is-active': $route.path.includes('Project')}" role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;"><i
                         class="el-icon-service"></i> <g-link to="/Project">开源项目</g-link></li>
             </ul>
         </el-card>
@@ -32,6 +32,15 @@
         <token-dialog ref="tokenDialog"></token-dialog>
     </div>
 </template>
+
+<style>
+    .el-menu-item a{
+        color: #000;
+    }
+    .el-menu-item.is-active a{
+        color: #409eff;
+    }
+</style>
 
 <script>
     import {

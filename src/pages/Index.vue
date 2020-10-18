@@ -44,6 +44,7 @@
         },
         mounted() {
             this.loading = true
+            
             GistApi.list(this.query).then((response) => {
                 let result = response.data
                 if (!result || result.length == 0) {

@@ -4,7 +4,6 @@ import Vue from 'vue'
 
 export default {
     list: function (query) {
-        console.log(Vue.prototype.$store)
         let githubUsername = Vue.prototype.$store.state.configuration.githubUsername
         return request({
             url: `/users/${githubUsername}/gists?page=${query.page}&per_page=${query.pageSize}`
