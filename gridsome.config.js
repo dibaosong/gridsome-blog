@@ -6,5 +6,6 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  pathPrefix: '/gridsome-blog/dist',
   plugins: []
 }
